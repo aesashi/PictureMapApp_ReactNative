@@ -16,11 +16,11 @@ export default function OutlinedButton({onPress, children, icon}) {
       />
       <Text style={styles.text}>{children}</Text>
     </Pressable>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  button : {
+  button: {
     paddingHorizontal: 12,
     paddingVertical: 6,
     margin: 4,
@@ -30,11 +30,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.primary500,
   },
-  pressed: {opacity: 0.7},
+  pressed: {
+    opacity: 0.7,
+  },
   icon: {
     marginRight: 6,
   },
   text: {
-    color: Colors.primary500
+    color: Colors.primary500,
   },
-})
+});
