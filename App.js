@@ -17,19 +17,19 @@ import * as SplashScreen from 'expo-splash-screen';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [dbInitialized, setDbInitialized] = useState();
+  const [dbInitialized, setDbInitialized] = useState(false);
 
   useEffect(() => {
-    init().then(()=> {
-      setDbInitialized(true);
-    }).catch((err) => {
-      console.log(err);
-    });
-  }, [])
+    init()
+      .then(() => {
+        setDbInitialized(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  if(dbInitialized){
-    SplashScreen.preventAutoHideAsync();
-  }
+
 
   return (
       <>
